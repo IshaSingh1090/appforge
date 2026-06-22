@@ -38,7 +38,7 @@ export async function POST(req: NextRequest, { params }: Params) {
       data: records.map((record: Record<string, unknown>) => ({
         appId,
         modelName,
-        data: record,
+       data: record as any,
       })),
     });
 

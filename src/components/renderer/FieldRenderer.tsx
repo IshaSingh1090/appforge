@@ -166,10 +166,13 @@ export function FieldRenderer({ field, value, onChange, error, disabled }: Field
       case 'image':
         return (
           <div className="space-y-2">
-            {value && typeof value === 'string' && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={value} alt="Preview" className="w-24 h-24 rounded-lg object-cover border border-gray-200" />
-            )}
+         {typeof value === 'string' ? (
+  <img
+    src={value}
+    alt="Preview"
+    className="w-24 h-24 rounded-lg object-cover border border-gray-200"
+  />
+) : null}
             <input
               type="url"
               value={String(value ?? '')}

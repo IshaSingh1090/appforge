@@ -223,7 +223,7 @@ export async function POST(req: NextRequest, { params }: Params) {
       data: {
         appId,
         modelName,
-        data: finalData,
+       data: finalData as any,
       },
     });
 
