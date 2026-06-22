@@ -266,7 +266,9 @@ export function validateAndSanitizeConfig(raw: unknown): ValidationResult {
         warnings.push(`Duplicate model name "${model.name}" at index ${i} — will be renamed`);
         model.name = `${model.name}_${i}`;
       }
-      modelNames.add(model.name);
+     if (typeof model.name === 'string') {
+        modelNames.add(model.name);
+      }
     }
   });
 
